@@ -1,4 +1,5 @@
 Sns2App::Application.routes.draw do
+  devise_for :users
   get "users/new"
    root  'static_pages#home'
   match '/help',    to: 'static_pages#help',    via: 'get'
