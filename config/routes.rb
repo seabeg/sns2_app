@@ -1,6 +1,6 @@
 Sns2App::Application.routes.draw do
   devise_for :users
-  get "users/new"
+  resources :users, only: [:show]
    root  'static_pages#home'
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
@@ -61,4 +61,6 @@ Sns2App::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   en
+  resources :users
+  
 end
